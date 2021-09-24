@@ -5,7 +5,7 @@ class User(database.Model):
     __tablename__ = 'user'
     table_args = {u'schema': 'main'}
 
-    id = database.Column(database, primary_key=True)
+    id = database.Column(database.Integer, primary_key=True)
     username = database.Column(database.String(20), unique=True, nullable=False)
     email = database.Column(database.String(120), unique=True, nullable=False)
     pw = database.Column(database.String(120), nullable=False)

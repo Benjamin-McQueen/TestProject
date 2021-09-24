@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+    {#  >Select Username Block [dropdown; requires jinja to pull all users from database]
+    >After username is selected, AJAX[?] call to propogate data
+    >Username Block [should be propogated when user selects the user
+        from the dropdown; Will update Username when the edit button is
+        pressed with the current value]
+    >Email block [Same specifications as Userblock, but with respect to email]
+    >Password Block [Remains empty even upon user selection; Updates only if not
+        blank]
+    >Edit Button [Checks if password has been filled out, and then updates password
+        if it is. Always updates the username and email field]
+    >Delete Button [Deletes currently selected user.]
+#}
+    {#    <div class="container p-3">#}
+    {#        <div> <!--Select Username Box-->#}
+    {#            <label for="select_user">Select User:</label>#}
+    {#            #}
+    {#            <select name="select_user">#}
+    {#                {% for user in users %}#}
+    {#                    <option value="{{ user.id }}">{{ user.username }}</option>#}
+    {#                {% endfor %}#}
+    {#            </select>#}
+    {#        </div>#}
+    {#        <div class="">#}
+    {#            <div class="">#}
+    {#                {{ userform.hidden_tag() }}#}
+    {#                <!--Username Box-->#}
+    {#                <div class="input-container">#}
+    {#                    {{ userform.username.label(class="form-control-label") }}:#}
+    {#                    {{ userform.username }}#}
+    {#                </div>#}
+    {##}
+    {#                <!--Email Box-->#}
+    {#                <div class="input-container">#}
+    {#                    {{ userform.email.label(class="form-control-label pl-3") }}:#}
+    {#                    {{ userform.email }}#}
+    {#                </div>#}
+    {##}
+    {#                <div class="input-container">#}
+    {#                    {{ userform.pw.label(class="form-control-label pl-3") }}:#}
+    {#                    {{ userform.pw }}#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <div class="buttons">#}
+    {#                {{ userform.edit_button(class="mr-3") }}#}
+    {#                {{ userform.delete_button }}#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+
+    <div class="overall">
+        {{ fuform.hidden_tag() }}
+        <div class="formbox">
+            <div class="select-box">
+                <select name="cars" id="cars">
+                    {% for user in users %}#}
+                        {
+                        <option value="{{ user.id }}">{{ user.username }}</option>#}
+                    {% endfor %}#}
+                </select>
+                <button type="button" class="btn btn-sm btn-primary">Select User</button>
+            </div>
+            <div class="manage-user-interface">
+                {{ userform.hidden_tag() }}
+                <div class="user-forms">
+                    <div class="input-container">
+                        {{ userform.username.label(class="form-control-label") }}:
+                        {{ userform.username }}
+                    </div>
+                    <div class="input-container">
+                        {{ userform.email.label(class="form-control-label pl-3") }}:
+                        {{ userform.email }}
+                    </div>
+                    <div class="input-container">
+                        {{ userform.pw.label(class="form-control-label pl-3") }}:
+                        {{ userform.pw }}
+                    </div>
+                </div>
+                <div class="buttons">
+                    {{ userform.edit_button(class="mr-3") }}
+                    {{ userform.delete_button }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

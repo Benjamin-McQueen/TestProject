@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="container pt-2 pb-2">
+    <div class="container pt-2 pb-2 flexall">
         <table id="table_id" class="display">
             <thead>
                 <tr>
@@ -11,7 +11,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% foreach tuple in data.items %}
+                {% for tuple in data %}
                     <tr>
                         <td>{{ tuple.id }}</td>
                         <td>{{ tuple.username }}</td>
