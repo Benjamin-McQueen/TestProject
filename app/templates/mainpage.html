@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container pt-2 pb-2">
+        <table id="table_id" class="display">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% foreach tuple in data.items %}
+                    <tr>
+                        <td>{{ tuple.id }}</td>
+                        <td>{{ tuple.username }}</td>
+                        <td>{{ tuple.email }}</td>
+                        <td>{{ tuple.pw }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
