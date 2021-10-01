@@ -14,7 +14,8 @@ class ModifyUser(FlaskForm):
 
 
 class FindUser(FlaskForm):
-    username = SelectField('SelectUser')
+    username = SelectField('Select User')
+    fubutton = SubmitField('Select This User')
 
 
 class CreateUser(FlaskForm):

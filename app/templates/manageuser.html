@@ -53,13 +53,14 @@
         {{ fuform.hidden_tag() }}
         <div class="formbox">
             <div class="select-box">
-                <select name="cars" id="cars">
+                <select name="users" role="users">
+                    <option value="" disabled selected>(Select a User)</option>
                     {% for user in users %}#}
                         {
                         <option value="{{ user.id }}">{{ user.username }}</option>#}
                     {% endfor %}#}
                 </select>
-                <button type="button" class="btn btn-sm btn-primary">Select User</button>
+            {{ fuform.fubutton }}
             </div>
             <div class="manage-user-interface">
                 {{ userform.hidden_tag() }}
