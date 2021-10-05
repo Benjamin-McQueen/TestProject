@@ -9,7 +9,7 @@ from app.config import Config
 
 database = SQLAlchemy()
 bcrypt = Bcrypt()
-CodeDebug = True
+CodeDebug = False
 
 if CodeDebug:
     from app.models import User
